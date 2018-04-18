@@ -2,7 +2,8 @@
 ALPSCore is [HERE](https://alpscore.org)
 
 # How to Compile
-```$ mkdir build
+```bash:compile.bash
+$ mkdir build
 $ cd build
 $ env /ALPSCore/install/path cmake ..
 $ make
