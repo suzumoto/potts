@@ -1,7 +1,7 @@
 # Monte Carlo calculation three-state Potts model using ALPSCore
 ALPSCore is [HERE](https://alpscore.org)
 
-# How to Compile
+## How to Compile
 ```none
 $ mkdir build
 $ cd build
