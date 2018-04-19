@@ -5,5 +5,9 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 find_package(ALPSCore 2.0 REQUIRED)
 
-add_executable(${PROJECT_NAME} potts.cpp)
-target_link_libraries(${PROJECT_NAME} ${ALPSCore_LIBRARIES})
+add_library(POTTSLIB STATIC potts.cpp)
+target_link_libraries(POTTSLIB ${ALPSCore_LIBRARIES})
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+target_link_libraries(${PROJECT_NAME} ${ALPSCore_LIBRARIES} POTTSLIB)

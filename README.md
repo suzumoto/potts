@@ -5,7 +5,8 @@ ALPSCore is [HERE](https://alpscore.org)
 ```none
 $ mkdir build
 $ cd build
-$ env /ALPSCore/install/path cmake ..
+$ export ALPSCore_DIR=/ALPSCore/install/PATH/
+$ cmake -DCMAKE_BUILD_TYPE=Release ..
 $ make
 ```
 
