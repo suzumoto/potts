@@ -24,14 +24,14 @@ private:
   std::vector<boost::variate_generator<boost::mt19937&, boost::uniform_real<> > >random_set;
   
   std::vector<std::vector<unsigned int> > cnfg_set;
-
   
-
+  
+  unsigned int random_N(int para);
   
 public:
   potts(options);
   ~potts();
-  update();
+  void update(int para);
   
 };
 

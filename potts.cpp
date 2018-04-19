@@ -1,4 +1,5 @@
 #include "potts.hpp"
+#include <omp.h>
 
 potts::potts(options p) :
   dim(p.dim),
@@ -16,4 +17,12 @@ potts::potts(options p) :
     eng_set.push_back(boost::mt19937(seed + 94 * i));
     random_set.push_back(boost::variate_generator<boost::mt19937&, boost::uniform_real<> >(eng_set[i],boost::uniform_real<>()));
   }
+}
+
+unsigned int potts::random_N(int para){
+  return floor((random_set[para])() * (cnfg_set[para]).size());
+}
+potts::~potts(){};
+void potts::update(int para){
+  std::cout << random_N(para) << std::endl;
 }
