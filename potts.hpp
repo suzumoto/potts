@@ -7,6 +7,7 @@
 #include <boost/random.hpp>
 #include <alps/accumulators.hpp>
 #include "options.hpp"
+#include "graph.hpp"
 class potts
 {
 private:
@@ -23,7 +24,7 @@ private:
   std::vector<boost::mt19937> eng_set;
   std::vector<boost::variate_generator<boost::mt19937&, boost::uniform_real<> > >random_set;
   
-  std::vector<std::vector<unsigned int> > cnfg_set;
+  std::vector<std::vector<graph> > cnfg_set;
   
   
   unsigned int random_N(int para);
