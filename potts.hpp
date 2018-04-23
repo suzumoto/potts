@@ -33,7 +33,7 @@ public:
   potts(options);
   ~potts();
   void update(int para);
-  
+  graph get_vertex(int id){return cnfg_set[0][id];};
 };
 
 

@@ -26,7 +26,7 @@ graph::graph(int size, std::string type, unsigned int id, int state){
   state_ = state;
   switch(type_number){
   case square :
-    if(id - size >= 0) connected_.push_back(id - size);
+    if(id >= size) connected_.push_back(id - size);
     else connected_.push_back(size*(size-1) + id);
     if(id % size != 0) connected_.push_back(id-1);
     else connected_.push_back(id + size - 1);

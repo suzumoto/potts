@@ -8,6 +8,10 @@ find_package(ALPSCore 2.0 REQUIRED)
 add_library(POTTSLIB STATIC potts.cpp graph.cpp)
 target_link_libraries(POTTSLIB ${ALPSCore_LIBRARIES})
 
-add_executable(${PROJECT_NAME} main.cpp)
+set(MAIN_PROJECT main)
+set(TEST_PROJECT graph_test)
+add_executable(${MAIN_PROJECT} main.cpp)
+add_executable(${TEST_PROJECT} graph_test.cpp)
 
-target_link_libraries(${PROJECT_NAME} ${ALPSCore_LIBRARIES} POTTSLIB)
+target_link_libraries(${MAIN_PROJECT} ${ALPSCore_LIBRARIES} POTTSLIB)
+target_link_libraries(${TEST_PROJECT} ${ALPSCore_LIBRARIES} POTTSLIB)

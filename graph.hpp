@@ -18,6 +18,11 @@ public:
   unsigned int get_id(){return id_;};
   int get_state(){return state_;};
   std::vector<unsigned int> get_connected(){return connected_;};
+  void show_connection(){
+    for(int i = 0; i < connected_.size(); ++i){
+      std::cout << connected_[i] << " ";
+    }
+  };
 };
 
 #endif
